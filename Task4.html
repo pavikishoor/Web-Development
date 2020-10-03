@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>Task4</title>
+	<style type="text/css">
+		.red{
+			background-color:  !important;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+<div class="row">
+	<div class=" section1 col-lg-6">
+		<div class="row card">
+			<div class="card">
+				<div class="card-body">
+					<div>
+					<label for="inpNoRef" class="card-title">Enter the no of Reference </label>
+					<input type="text" name="" id = "inpNoRef">
+					</div>
+					<input type="button" id="button" name="" value="Submit" class="btn btn-primary">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section2 col-lg-6" style="background-color: #8f746a">
+		
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+
+function myFunction() {
+	$('.section2').children().remove('div');
+	$('.section2').append('<div><label> Reference</label></div>');
+	$(".newElement").each(function(){
+		var name = $(this).children('.name').val();
+		var age = $(this).children('.age').val();
+		$('.section2').append('<div><label> Name </label><p>'+name+'</p><label> Age </label><p>'+age+'</p></div>');
+	});
+}
+	$(document).ready(function(){
+		$("#button").click(function(){
+			$('.section1').children().remove('div .newElement');
+			$('.section1').children().remove('div .newElementButton');
+			$('.section2').children().remove('div');
+			var val = $("#inpNoRef").val();
+			for(var i = 1; i<=val ; i++){
+				$('.section1').append('<div class="row card newElement"><label> Reference' +i+'</label><input type="text" name="" class="name" placeholder="Enter Reference Name"><br><input type="text" name="" class="age" placeholder="Enter Reference Age"></div>');
+			}
+			$('.section1').append('<input type="button" id="submit" name="" class="newElementButton" value="Submit" onclick="myFunction()" class="btn btn-primary">');
+		});
+	});
+</script>
+</body>
+</html>
