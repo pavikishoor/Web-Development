@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select JAVA</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	.css{
+		text-decoration:line-through;
+	}
+</style>
+<body>
+<div class="all">
+	
+<div class="priorityHigh1">
+	<div>
+		<input type="checkbox" id="java" class="java">
+		<label >Java</label>
+	</div>
+	<div>
+		<input type="checkbox" id="python" class="python">
+		<label >python</label>
+	</div>
+	<div>
+		<input type="checkbox" class="c">
+		<label >c</label>
+	</div>
+	<div>
+		<input type="checkbox" class="ruby">
+		<label>ruby</label>
+	</div>
+</div>
+<hr>
+<div class="priorityHighest">
+	<div>
+		<input type="checkbox" class="java" id="java">
+		<label for="java">Java</label>
+	</div>
+	<div>
+		<input type="checkbox" class="python">
+		<label >python</label>
+	</div>
+	<div>
+		<input type="checkbox" class="c">
+		<label >c</label>
+	</div>
+	<div>
+		<input type="checkbox" class="ruby">
+		<label >ruby</label>
+	</div>
+</div>
+<hr>
+<div class="prioritylow">
+	<div>
+		<input type="checkbox" class="java" id="java">
+		<label  for="java">Java</label>
+	</div>
+	<div>
+		<input type="checkbox" class="python">
+		<label >python</label>
+	</div>
+	<div>
+		<input type="checkbox" class="c">
+		<label >c</label>
+	</div>
+	<div>
+		<input type="checkbox" class="ruby">
+		<label >ruby</label>
+	</div>
+</div>
+<hr>
+<div class="priorityLowest">
+	<div>
+		<input type="checkbox" class="java" id="java">
+		<label  for="java">Java</label>
+	</div>
+	<div>
+		<input type="checkbox" class="python">
+		<label>python</label>
+	</div>
+	<div>
+		<input type="checkbox" class="c">
+		<label>c</label>
+	</div>
+	<div>
+		<input type="checkbox" class="ruby">
+		<label>ruby</label>
+	</div>
+</div>
+
+<input type="button" class="btn"name="reset" value="reset">
+<input type="checkbox" class="s_btn"name="selectAll"><label>Select all</label>
+
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("input").change(function(){
+			var isChecked = $(this).prop("checked");
+			if(isChecked == true){
+				var ClassName = $(this).attr("class");
+  				$(this).parent().siblings().fadeOut("slow");
+				$("."+ClassName).not(this).parent().fadeOut("slow");
+			}
+		});
+		$('.btn').click(function(){
+			var ClassName = $(this).attr("class");
+			$('input[type=checkbox]').parent().siblings('div').fadeIn("slow");
+			$("input[type=checkbox]").not(this).siblings().fadeIn("slow");
+			$("input[type=checkbox]").prop("checked", false);
+		});
+
+		$('.s_btn').click(function(){
+			var isChecked = $(this).prop("checked");
+			if(isChecked == true){
+				$("input[type=checkbox]").prop("checked", true);
+			}
+			else{
+				$("input[type=checkbox]").prop("checked", false);
+			}
+		});
+	});
+</script>
+</body>
+</html>
+
