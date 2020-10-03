@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select JAVA</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<form>
+	<label for="java">Java</label>
+	<input type="checkbox" name="" class="java">
+</form>
+<form>
+	<label for="java">Java</label>
+	<input type="checkbox" name="" class="java">
+</form>
+<form>
+	<label for="java">Java</label>
+	<input type="checkbox" name="" class="java">
+</form>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("input").change(function(){
+		var currentVal = $(this).prop("checked");
+		var ClassName = $(this).attr("class")
+		if(currentVal){
+			$("."+ClassName).not(this).attr("disabled",true);
+		}
+		else{
+			$("."+ClassName).not(this).attr("disabled",false);
+		}
+		});
+	});
+</script>
+</body>
+</html>
