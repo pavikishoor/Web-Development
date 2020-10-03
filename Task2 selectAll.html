@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select all</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style type="text/css">
+	.card {
+  			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  			padding: 10px;
+  			transition: 0.3s;
+  			background-color: #d82f3f;
+		}
+	.gap-btwn {
+            margin-left: 20px;
+            margin-bottom: : 20px;
+        }
+</style>
+<body>
+<div class="row" >
+	<div class="Highpriority card col-lg-2 col-md-4 col-sm-12 gap-btwn" style="margin-top:10px;">
+		<div class="card-img-top">
+			<h1>High Priority</h1>
+			<div>
+				<input type="checkbox" class="selectAll" id="selectAll" value="selectAll">
+				<label  for="selectAll">selectAll</label>
+			</div>
+			<div>
+				<input type="checkbox" class="java" id="java">
+				<label  for="java">Java</label>
+			</div>
+			<div>
+				<input type="checkbox" class="python">
+				<label>python</label>
+			</div>
+			<div>
+				<input type="checkbox" class="c">
+				<label>c</label>
+			</div>
+			<div>
+				<input type="checkbox" class="ruby">
+				<label>ruby</label>
+			</div>
+		</div>
+	</div>
+	<div class="LowPriority card col-lg-2 col-md-4 col-sm-12 gap-btwn" style="margin-top:10px;">
+		<div class="card-img-top">
+			<h1>low Priority</h1>
+			<div>
+				<input type="checkbox" class="selectAll" id="selectAll" value="selectAll">
+				<label  for="selectAll">selectAll</label>
+			</div>
+			<div>
+				<input type="checkbox" class="java" id="java">
+				<label  for="java">Java</label>
+			</div>
+			<div>
+				<input type="checkbox" class="python">
+				<label>python</label>
+			</div>
+			<div>
+				<input type="checkbox" class="c">
+				<label>c</label>
+			</div>
+			<div>
+				<input type="checkbox" class="ruby">
+				<label>ruby</label>
+			</div>
+		</div>
+	</div>
+	<div class="Very_high_Priority card col-lg-2 col-md-4 col-sm-12 gap-btwn" style="margin-top:10px;">
+		<div class="card-img-top">
+			<h1>Vhigh Priority</h1>
+			<div>
+				<input type="checkbox" class="selectAll" id="selectAll" value="selectAll">
+				<label  for="selectAll">selectAll</label>
+			</div>
+			<div>
+				<input type="checkbox" class="java" id="java">
+				<label  for="java">Java</label>
+			</div>
+			<div>
+				<input type="checkbox" class="python">
+				<label>python</label>
+			</div>
+			<div>
+				<input type="checkbox" class="c">
+				<label>c</label>
+			</div>
+			<div>
+				<input type="checkbox" class="ruby">
+				<label>ruby</label>
+			</div>
+		</div>
+	</div>
+	<div class="Very_low_Priority card col-lg-2 col-md-4 col-sm-12 gap-btwn" style="margin-top:10px;">
+		<div class="card-img-top">
+			<h1>Vlow Priority</h1>
+			<div>
+				<input type="checkbox" class="selectAll" id="selectAll" value="selectAll">
+				<label  for="selectAll">selectAll</label>
+			</div>
+			<div>
+				<input type="checkbox" class="java" id="java">
+				<label  for="java">Java</label>
+			</div>
+			<div>
+				<input type="checkbox" class="python">
+				<label>python</label>
+			</div>
+			<div>
+				<input type="checkbox" class="c">
+				<label>c</label>
+			</div>
+			<div>
+				<input type="checkbox" class="ruby">
+				<label>ruby</label>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+<input type="button" class="btn btn btn-primary"name="reset" style="margin: 10px 1px" value="reset">
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input').click(function(){
+				$(this).parent('div').parent('div').children('div').children('input').prop('checked',$(this).parent('div').parent('div').children('div').children('.selectAll').prop('checked'));
+			});
+			$('input').change(function(){
+				$("input").parent('div').parent('div').children('div').children('input').each(function(){
+					var isChecked = $("input").prop('checked');
+				});
+			});
+		});
+	</script> 
+</body>
+</html>
